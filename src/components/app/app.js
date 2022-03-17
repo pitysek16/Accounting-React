@@ -13,14 +13,33 @@ class App extends Component {
     super(props);
     this.state = {
       data: [
-        { name: "John Snow", salary: 800, increase: false, id: 1 },
-        { name: "Robb Stark", salary: 3000, increase: true, id: 2 },
-        { name: "Arya Stark", salary: 5000, increase: false, id: 3 },
+        { name: "John Snow", salary: 800, increase: false, rise: false, id: 1 },
+        {
+          name: "Robb Stark",
+          salary: 3000,
+          increase: true,
+          rise: true,
+          id: 2,
+        },
+        {
+          name: "Arya Stark",
+          salary: 5000,
+          increase: false,
+          rise: false,
+          id: 3,
+        },
+        {
+          name: "Sansa Stark",
+          salary: 800,
+          increase: false,
+          rise: false,
+          id: 4,
+        },
       ],
       term: "",
       filter: "all",
     };
-    this.maxId = 4;
+    this.maxId = 5;
   }
 
   deleteItem = (id) => {
@@ -31,7 +50,6 @@ class App extends Component {
     });
   };
 
-  // Да, пока могут добавляться пустые пользователи. Мы это еще исправим
   addItem = (name, salary) => {
     const newItem = {
       name,
